@@ -13,6 +13,5 @@
     <?php include "marquee.php"; ?>
     <br><br><br>
     <?php include "myProjects.php"; ?>
-    
-    <br><br>
+    <?php include "contactMe.php"; ?>
     <?php include "footer.php"; ?>

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 banner text-center" style=" background-size: cover; height: 100px;">
         <div class="overlay">
-            <p class="display-1"><b>A few of my projects</b></p>
+            <p class="display-1" id="projects"><b>A few of my projects</b></p>
         </div>
     </div>
 </div>
@@ -40,5 +40,5 @@
             <!-- Repeat the col-4 divs as needed -->
         </div>
     </div>
-    <br><br><br><br><br>
+    <br><br>
 </div>
