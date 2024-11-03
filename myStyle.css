@@ -1,0 +1,205 @@
+body {
+    background-image: url('images/dev.jpg');
+    background-size: cover;
+    /* Use cover to ensure full coverage */
+    overflow-x: hidden;
+    margin: 0;
+    /* Prevent default body margin */
+}
+
+.wrap {
+    position: relative;
+    /* Allows absolutely positioned children */
+    height: 100vh;
+    /* Set a height for the wrap */
+}
+
+.blur_frame {
+    opacity: .8;
+    filter: blur(4px);
+}
+
+.title {
+    position: absolute;
+    /* Position the title absolutely within the wrap */
+    top: 40%;
+    /* Centers the title vertically */
+    left: 50%;
+    /* Centers the title horizontally */
+    transform: translate(-50%, -50%);
+    /* Centers the title */
+    z-index: 1;
+    /* Ensures the title is on top */
+    color: white;
+    /* Adjust color for visibility */
+    text-align: center;
+    /* Center text */
+    padding: 20px;
+    /* Optional padding */
+}
+
+.description {
+    margin-top: 5vh;
+    font-size: 18px;
+}
+
+.name {
+    color: white;
+    font-size: 16px;
+    margin-top: 5%;
+}
+
+.banner {
+    position: relative;
+    margin-top: 10vh;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* Black overlay with transparency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.overlay a {
+    font-size: 20px;
+}
+
+
+.marquee {
+    width: 100%;
+    padding-right: 0;
+    opacity: .8;
+    padding: 0;
+    font-size: 50px;
+    text-align: center;
+    transform: translate(calc((100vw - 100cqw)/2));
+
+    &>* {
+        animation: marquee 10s linear;
+        animation-timeline: view();
+
+        @media (prefers-reduced-motion: reduce) {
+            animation: none;
+        }
+    }
+}
+
+.marquee h4 {
+    width: 100%;
+    margin-right: 0;
+    animation-direction: reverse;
+}
+
+.marquee-content {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-5%);
+    }
+}
+
+.project_frame {
+    position: absolute;
+    /* Use absolute positioning */
+    top: 0;
+    /* Position at the top */
+    left: 0;
+    /* Position at the left */
+    width: 100%;
+    /* Make it cover the container */
+    height: 100%;
+    /* Make it cover the container */
+    filter: blur(8px);
+    /* Apply the blur effect */
+    z-index: 1;
+    /* Set z-index lower than other elements */
+    opacity: .8;
+}
+
+.project_container {
+    position: relative;
+    /* Establish positioning context */
+    overflow: hidden;
+    /* Prevent overflow if necessary */
+    margin: 15px;
+    width: 30%;
+}
+
+.project_container:hover {
+    box-shadow: 4px 4px 4px 4px rgb(5, 22, 212);
+
+    .project_frame {
+        filter: blur(4px);
+        opacity: 1;
+    }
+}
+
+.project_container img {
+    box-shadow: 4px 4px 2px 2px rgba(255, 255, 255, 0.331);
+}
+
+.z-index-2 {
+    position: relative;
+    /* Ensure text and buttons are positioned */
+    z-index: 2;
+    /* Higher z-index to sit on top of the blurred image */
+}
+
+.container {
+    justify-self: center;
+    width: 100%;
+}
+
+
+/* Animation property */
+.website_button {
+    animation: wiggle 3s linear infinite;
+    height: 10vh;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+
+    0%,
+    7% {
+        transform: rotateZ(0);
+    }
+
+    15% {
+        transform: rotateZ(-15deg);
+    }
+
+    20% {
+        transform: rotateZ(10deg);
+    }
+
+    25% {
+        transform: rotateZ(-10deg);
+    }
+
+    30% {
+        transform: rotateZ(6deg);
+    }
+
+    35% {
+        transform: rotateZ(-4deg);
+    }
+
+    40%,
+    100% {
+        transform: rotateZ(0);
+    }
+}
